@@ -11,3 +11,4 @@ class AccountAsset(models.Model):
     barcode = fields.Char(related="product_id.barcode")
     supplier_id = fields.Many2one(string="Fournisseur", comodel_name="res.partner")
     invoice_name = fields.Char(string="N° de facture")
+    year = fields.Char(string="Année")
