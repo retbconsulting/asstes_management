@@ -12,3 +12,4 @@ class AccountAsset(models.Model):
     supplier_id = fields.Many2one(string="Fournisseur", comodel_name="res.partner")
     invoice_name = fields.Char(string="N° de facture")
     year = fields.Char(string="Année")
+    asset_categ_id = fields.Many2one(comodel_name='asset.category', string='Nature')

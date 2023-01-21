@@ -9,6 +9,7 @@
                 <page string="Autres informations" name="other_infos">
                     <group>
                         <field name="inventoriable"/>
+                        <field name="asset_categ_id"/>
                         <field name="year"/>
                         <field name="location_id"/>
                         <field name="product_id"/>
