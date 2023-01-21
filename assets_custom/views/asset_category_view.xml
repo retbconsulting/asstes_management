@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_asset_category_rbconsulting_form">
+        <field name="name">asset.category.rbconsulting.form</field>
+        <field name="model">asset.category</field>
+        <field name="arch" type="xml">
+            <form string="Asset categories">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_asset_category_rbconsulting_tree">
+        <field name="name">asset.category.rbconsulting.tree</field>
+        <field name="model">asset.category</field>
+        <field name="arch" type="xml">
+            <tree string="Asset categories" editable="bottom">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_asset_category_all_a" model="ir.actions.act_window">
+        <field name="name">Asset categories</field>
+        <field name="res_model">asset.category</field>
+        <field name="view_id" ref="view_asset_category_rbconsulting_tree"/>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <menuitem parent="account.menu_finance_entries_management" id="menu_action_asset_category" action="action_asset_category_all_a" sequence="102" groups="account.group_account_readonly"/>
+
+</odoo>
