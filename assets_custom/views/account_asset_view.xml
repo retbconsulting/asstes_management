@@ -5,13 +5,15 @@
         <field name="model">account.asset</field>
         <field name="inherit_id" ref="account_asset.view_account_asset_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//page[@name='related_items']" position="after">
+            <xpath expr="//page[@name='main_page']" position="after">
                 <page string="Autres informations" name="other_infos">
                     <group>
                         <field name="inventoriable"/>
+                        <field name="present"/>
                         <field name="asset_categ_id"/>
                         <field name="year"/>
                         <field name="location_id"/>
+                        <field name="new_location_id"/>
                         <field name="product_id"/>
                         <field name="categ_id"/>
                         <field name="barcode"/>

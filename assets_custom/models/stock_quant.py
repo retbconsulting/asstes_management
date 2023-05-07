@@ -1,0 +1,13 @@
+# -*- coding: utf-8 -*-
+from odoo import api, fields, models, _
+
+class StockQuant(models.Model):
+    _inherit = 'stock.quant'
+    
+    def action_apply_inventory(self):
+        ### Look for related Asset
+        related_asset = self.env['account.asset'].search([('product_id', '=', self.product_id.id)], limit=1)
+        if related_asset:
+            related_asset.write({'present' : True, 'new_location_id' : self.location_id.id})
+        self.write({'inventory_quantity' : 1})
+        return super(StockQuant, self).action_apply_inventory()
