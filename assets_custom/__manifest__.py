@@ -14,7 +14,10 @@
         'product'
     ],
     'data': [
-        'views/account_asset_view.xml'
+        'views/account_asset_view.xml',
+        'views/product_category_view.xml',
+        'views/asset_category_view.xml',
+        'security/ir.model.access.csv'
     ],
     'demo': [
     ],
