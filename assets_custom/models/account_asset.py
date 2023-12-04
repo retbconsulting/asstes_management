@@ -15,3 +15,15 @@ class AccountAsset(models.Model):
     year = fields.Char(string="Année")
     asset_categ_id = fields.Many2one(comodel_name='asset.category', string='Nature')
     present = fields.Boolean(string="Est présent", default=False, readonly=True, tracking=True)
+    comment = fields.Selection([('1', 'A trouver'),
+                                ('2', 'A vérifier'),
+                                ('3', 'A voir avec opérationnel'),
+                                ('4', 'A voir avec Rachid'),
+                                ('5', 'Achat à confirmer'),
+                                ('6', 'Autre emplacement'),
+                                ('7', 'Clim'),
+                                ('8', 'Défaillant'),
+                                ('9', 'Déjà scané'),
+                                ('10', 'Endommagé'),
+                                ('11', 'Hauteur d’emplacement'),
+                                ('12', 'Non inventoriable'), ], string="Commentaire", traking=True, default="")
